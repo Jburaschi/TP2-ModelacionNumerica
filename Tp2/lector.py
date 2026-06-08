@@ -1,10 +1,10 @@
+import datetime
 import numpy as np
 
 
 
 def parsear_segundos(fecha_str, hora_str):
     anio, mes, dia = map(int, fecha_str.split("/"))
-    
     partes_hora = hora_str.split(":")
     hora   = int(partes_hora[0])
     minuto = int(partes_hora[1])
@@ -17,11 +17,7 @@ def parsear_segundos(fecha_str, hora_str):
     return dt.timestamp()
 
 def cargar_datos(nombre_archivo):
-
-    datos = np.genfromtxt(
-        nombre_archivo,
-        dtype=str
-    )
+    datos = np.genfromtxt(nombre_archivo, dtype=str)
 
     cantidad = len(datos)
 
@@ -31,17 +27,12 @@ def cargar_datos(nombre_archivo):
     z = np.zeros(cantidad)
 
     for i in range(cantidad):
-
-        t[i] = parsear_segundos(
-            datos[i][0],
-            datos[i][1]
-        )
-
+        t[i] = parsear_segundos(datos[i][0], datos[i][1])
         x[i] = float(datos[i][2])
         y[i] = float(datos[i][3])
         z[i] = float(datos[i][4])
 
-    # Tiempo relativo al primer instante
+    # Tiempo relativo al primer instante de la muestra
     t = t - t[0]
 
     return t, x, y, z
