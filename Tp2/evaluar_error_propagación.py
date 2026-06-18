@@ -57,7 +57,7 @@ def evaluar_desviacion_orbital():
     fig, axs = plt.subplots(2, 1, figsize=(10, 10))
 
     axs[0].plot(t_evaluacion, deriva_vs_gps, color='crimson')
-    axs[0].set_title("Deriva: Modelo RK4 (Paso 600s) vs Telemetría GPS Real")
+    axs[0].set_title("RK4 (Paso 600s) vs Telemetría GPS Real")
     axs[0].set_ylabel("Error de Posición [km]")
     axs[0].grid(True)
 
