@@ -17,18 +17,18 @@ Se utilizaron las bibliotecas `numpy` y `matplotlib`.
 
 ### Interpolador
 
-Ejecutar:
+Ejecutar desde la carpeta Tp2:
 
 ```bash
 python main.py
 ```
 
 El programa solicita un tiempo en segundos para realizar la interpolación y luego genera los gráficos correspondientes.
-por ejemplo Ingrese tiempo [s]: 1500
+Ingrese tiempo [s]: 6000
 
 ### Propagador
 
-Ejecutar:
+Ejecutar desde la carpeta Tp2:
 
 ```bash
 python propagador.py
