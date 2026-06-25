@@ -7,22 +7,22 @@ from spline import SplineNatural
 
 def comparar_spline_vs_real():
 
-    # Datos cada 600 s (para construir la spline)
+    # Datos cada 600 s 
     t600, x600, y600, z600 = cargar_datos(
         "SACD_TPV_step_600s.txt"
     )
 
-    # Datos cada 1 s (referencia "real")
+    # Datos cada 1 s 
     t1, x1, y1, z1 = cargar_datos(
         "SACD_TPV_step_1s.txt"
     )
 
-    # Construir spline con datos cada 600 s
+    # Construyo spline con datos cada 600 s
     sx = SplineNatural(t600, x600)
     sy = SplineNatural(t600, y600)
     sz = SplineNatural(t600, z600)
 
-    # Filtrar solo 1 periodo orbital
+    # Filtro solo 1 periodo orbital
     periodo = 110 * 60
 
     mascara = t1 <= periodo

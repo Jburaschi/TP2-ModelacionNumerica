@@ -54,7 +54,7 @@ class SplineNatural:
 
         for i in range(n - 1):
             h[i] = self.t[i + 1] - self.t[i]
-            # Uso de math.isclose (lo pide el enunciado)
+            # Uso de math.isclose para evitar errores de comparación de flotantes
             if math.isclose(h[i], 0.0, abs_tol=1e-9):
                 raise ValueError(
                     f"Puntos de tiempo idénticos o demasiado cercanos detectados en el índice {i}."

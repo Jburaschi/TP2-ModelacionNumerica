@@ -4,7 +4,7 @@ from graficos import graficar_orbita, graficar_componentes
 from comparacion import comparar_spline_vs_real
 
 
-# PUNTO B Interpolacion y graficos del SAC-D
+# Punto B Interpolacion y graficos del SAC-D
 t, x, y, z = cargar_datos(
     "SACD_TPV_step_600s.txt"
 )
@@ -31,10 +31,10 @@ else:
     print(f"  Y = {sy.evaluar(tiempo):.6f} km")
     print(f"  Z = {sz.evaluar(tiempo):.6f} km")
 
-# Graficos punto B
+# Graficos  del punto B
 graficar_orbita(t, x, y, z, sx, sy, sz)
 graficar_componentes(t, x, y, z, sx, sy, sz)
 
-# punto c Comparacion spline (600s) vs datos (1s)
+# punto c comparacion spline (600s) vs datos (1s)
 
 comparar_spline_vs_real()
